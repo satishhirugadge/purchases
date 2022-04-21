@@ -1,3 +1,4 @@
+//Parent
 import "./App.css";
 import { PurchasePoints } from "./components/PurchasePoints";
 
