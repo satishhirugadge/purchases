@@ -1,9 +1,8 @@
 import React from "react";
-import { usePurChases } from "../context/usePurChases";
+import { usePurchaseDetails } from "../context/usePurchaseDetails";
 
 export const PurchaseHistory = () => {
-  const { purchaseData } = usePurChases();
-
+  const { purchaseData } = usePurchaseDetails();
   return (
     <div className="purchase-table">
       {purchaseData.length > 0 && (
@@ -17,12 +16,12 @@ export const PurchaseHistory = () => {
             </tr>
           </thead>
           <tbody>
-            {purchaseData.map((trxn, idx) => (
-              <tr key={idx}>
-                <td>{trxn.id}</td>
-                <td>{trxn.date}</td>
-                <td>{trxn.amount}</td>
-                <td>{trxn.rewards}</td>
+            {purchaseData.map(({ id, date, amount, rewards }) => (
+              <tr key={id}>
+                <td>{id}</td>
+                <td>{date}</td>
+                <td>{amount}</td>
+                <td>{rewards}</td>
               </tr>
             ))}
           </tbody>
