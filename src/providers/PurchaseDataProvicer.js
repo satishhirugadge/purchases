@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import PurchaseService from "../services/serivce";
+import PurchaseService from "../services/service";
 
 export const PurchaseContext = createContext({ purchaseData: [] });
 
@@ -28,9 +28,9 @@ export const PurchaseDataProvicer = ({ children }) => {
         : [];
     setPurchaseData(data);
   };
-
   useEffect(() => {
     getPurchases();
+    // eslint-disable-next-line
   }, []);
 
   return (
