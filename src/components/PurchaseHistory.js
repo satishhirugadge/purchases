@@ -3,6 +3,7 @@ import { usePurChases } from "../context/usePurChases";
 
 export const PurchaseHistory = () => {
   const { purchaseData } = usePurChases();
+
   return (
     <div className="purchase-table">
       {purchaseData.length > 0 && (
